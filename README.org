@@ -4,8 +4,8 @@ scrapy的例子教程也并不坏。一直以来都是看别人的博客教程�
 要为别人做些什么。尽写微薄之意吧。
 
 * 抓取站点
-1、shell
-2、emacser
+1)shell
+2)emacser
 
 * 数据处理
 导出为json,或调用sqlite存储。
