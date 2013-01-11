@@ -44,4 +44,14 @@ class CateItem(Item):
     """
     cate = Field()
     
-    
+class BlogItem(Item):
+    """
+    用于抓取blog的item
+    """
+    title = Field()
+    pub_date = Field()
+    blog = Field()
+    comments = Field()
+    cate = Field()
+    tag = Field()
+    author = Field()
