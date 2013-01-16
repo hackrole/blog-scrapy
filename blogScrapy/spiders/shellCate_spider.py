@@ -75,16 +75,17 @@ class ShellBlogSpider(BaseSpider):
         
          items = []
         
-         # url = urls[0]
-         # items.append(self.make_requests_from_url(url).replace(callback=self.parse_blog))
-         for url in urls:
+         debug = False
+         if debug:
+             url = urls[1]
+             items.append(self.make_requests_from_url(url).replace(callback=self.parse_blog))
+             return items
+         for url in urls[1:]:
              items.append(self.make_requests_from_url(url).replace(callback=self.parse_blog))
          return items
     
     def parse_blog(self, response):
         hxs = HtmlXPathSelector(response)
-        
-        items = []
 
         title = hxs.select('//h1[@class="entry-title"]/text()').extract() or ['']
         time = hxs.select('//time[@class="entry-date"]/text()').extract() or ['']
@@ -102,7 +103,4 @@ class ShellBlogSpider(BaseSpider):
         item['comments'] = comments
         item['tag'] = tag
         item['author'] = author
-        items.append(item)
-        print '======================'
-        return items
-
+        return item
