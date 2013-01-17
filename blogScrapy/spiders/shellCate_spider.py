@@ -75,7 +75,7 @@ class ShellBlogSpider(BaseSpider):
         
          items = []
         
-         debug = False
+         debug = True
          if debug:
              url = urls[1]
              items.append(self.make_requests_from_url(url).replace(callback=self.parse_blog))
