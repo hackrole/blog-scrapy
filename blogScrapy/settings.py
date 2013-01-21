@@ -11,7 +11,7 @@ BOT_NAME = 'blogScrapy'
 SPIDER_MODULES = ['blogScrapy.spiders']
 NEWSPIDER_MODULE = 'blogScrapy.spiders'
 
-ITEM_PIPELINES = ['blogScrapy.pipelines.ShellSavePipeline',]
+ITEM_PIPELINES = ['blogScrapy.pipelines.BlogSavePipeline',]
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'blogScrapy (+http://www.yourdomain.com)'
