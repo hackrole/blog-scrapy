@@ -9,7 +9,7 @@
 import sqlite3
 from scrapy.exceptions import DropItem
 from blogScrapy.items import CateItem,TagItem,BlogItem
-from blogScrapy.helps import BlogSaveHelps
+from blogScrapy.helps import BlogSaveHelp
 import sys,traceback,time
 
 
@@ -23,7 +23,7 @@ class BlogSavePipeline(object):
     """
     
     def __init__(self):
-        self.help = BlogSaveHelps()
+        self.help = BlogSaveHelp.BlogSaveHelps()
 
     def process_item(self, item, spider):
         if isinstance(item, CateItem):
